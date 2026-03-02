@@ -55,10 +55,10 @@
     border-radius: 30px;
     border: none;
     background-color: #4CAF50;
-    color: white;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
+    color: white;
 }
 
 #search-btn:hover {
