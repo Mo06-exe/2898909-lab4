@@ -13,7 +13,7 @@ async function searchCountry(countryName) {
         // Update bordering countries section
         
         spinner.classList.remove("hidden");
-        const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+        const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`);
         const country = await response.json();
         const countryData = country[0];
         // console.log(countryData.borders);
