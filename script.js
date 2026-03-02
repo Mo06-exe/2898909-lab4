@@ -53,6 +53,12 @@ async function searchCountry(countryName) {
 
         }
 
+        if(arrBorders.length === 0) {
+            parentSection.innerHTML = `
+            <p>${"No neighbours"}</p>
+            `;
+        }
+
 
 
     } catch (error) {
