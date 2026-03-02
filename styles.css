@@ -1,9 +1,13 @@
 .spinner {
     /* Your styling */
-    animation: spin 1s linear infinite; /* Required */
-    color: red;
-    size: 50px;
-    visibility: hidden;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none; /* Hide by default */
 }
 
 @keyframes spin {
@@ -89,17 +93,6 @@
     color: #cc0000;
     border-radius: 10px;
     font-weight: bold;
-}
-
-#loading-spinner {
-    width: 50px;
-    height: 50px;
-    margin: 20px auto;
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #4CAF50;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    display: none; /* Hide by default */
 }
 
 
