@@ -1,30 +1,22 @@
-// Required: Use async/await OR .then() for API calls
-// Required: Use try/catch OR .catch() for error handling
-// Example API call
 const spinner = document.getElementById("loading-spinner");
 document.getElementById("country-info").classList.add("hidden");
 document.getElementById("error-message").classList.add("hidden");
 async function searchCountry(countryName) {
     try {
-        // Show loading spinner
-        // Fetch country data
-        // Update DOM
-        // Fetch bordering countries
-        // Update bordering countries section
         
         spinner.classList.remove("hidden");
         const response = await fetch(`https://countries.dev/name/${countryName}`);
         const country = await response.json();
         const countryData = country[0];
-        // console.log(countryData.borders);
+        // console.log(countryData);
 
         
         document.getElementById('country-info').innerHTML = `
-        <h2>${countryData.name.common}</h2>
-        <p><strong>Capital:</strong> ${countryData.capital[0]}</p>
+        <h2>${countryData.name}</h2>
+        <p><strong>Capital:</strong> ${countryData.capital}</p>
         <p><strong>Population:</strong> ${countryData.population.toLocaleString()}</p>
         <p><strong>Region:</strong> ${countryData.region}</p>
-        <img src="${countryData.flags.svg}" alt="${countryData.name.common} flag">
+        <img src="${countryData.flags.svg}" alt="${countryData.name} flag">
         `;
 
         const arrBorders = countryData.borders;
@@ -35,12 +27,13 @@ async function searchCountry(countryName) {
             try {
                 const response = await fetch(`https://countries.dev/alpha/${arrBorders[i]}`);
                 const data = await response.json();
-                const countryData = data[0];
+                const countryData = data;
+                // console.log(countryData);
             
                 const item = document.createElement("section");
                 item.innerHTML= `
-                <h2>${countryData.name.common}</h2>
-                <img src="${countryData.flags.svg}" alt="${countryData.name.common} flag">
+                <h2>${countryData.name}</h2>
+                <img src="${countryData.flags.svg}" alt="${countryData.name} flag">
                 `
                 parentSection.appendChild(item);
             }
