@@ -33,7 +33,7 @@ async function searchCountry(countryName) {
         parentSection.replaceChildren();
         for (let i = 0; i < arrBorders.length; ++i) {
             try {
-                const response = await fetch(`https://restcountries.com/v3.1/alpha/${arrBorders[i]}`);
+                const response = await fetch(`https://countries.dev/alpha/${arrBorders[i]}`);
                 const data = await response.json();
                 const countryData = data[0];
             
